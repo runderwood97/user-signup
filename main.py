@@ -70,7 +70,43 @@ def check():
             ++numErrors
 
     #Check to verify e-mail
-    
+    if (eMail != "")
+        if (" " in eMail)
+            eMailError = "Your e-mail can not contain a space"
+            ++numErrors
+        if (len(eMail) < 3 || len(eMail) > 20)
+            if (eMailError == "")
+                eMailError = "Your e-mail must be 3-20 characters long"
+                ++numErrors
+            else
+                eMailError += ", Your e-mail must be 3-20 characters long"
+                ++numErrors
+
+        for letter in eMail
+            atSignFound = False
+            dotFound = False
+
+            if (letter == "@")
+                if (atSignFound == False)
+                    atSignFound = True
+                else
+                    if (eMailError == "")
+                        eMailError = "You can only have one @ in your e-mail"
+                        ++numErrors
+                    else 
+                        eMailError += ", You can only have one @ in your e-mail"
+                        ++numErrors
+            if (letter == ".")
+                if (dotFound == False)       
+                    dotFound = True
+                else 
+                    if (eMailError == "")
+                        eMailError = "You can only have one . in your e-mail"
+                        ++numErrors
+                    else 
+                        eMailError += ", You can only have on . in your e-mail"
+                        ++numErrors      
+                
 
     
 @app.route("/")
