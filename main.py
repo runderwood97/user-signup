@@ -15,13 +15,21 @@ def check():
     eMailError = ""
     passwordError = ""
     confirmPasswordError = ""
+    numErrors = 0
 
     if (uName == "")
         uNameError = "You must insert a username"
+        ++numErrors
+    else
+        
     if (password == "")
         passwordError = "You must insert a password"
+        ++numErrors
     if (confirmPassword == "")
         confirmPasswordError = "You must insert a confirm password"
+        ++numErrors
+    
+
 
     
 
