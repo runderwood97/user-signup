@@ -1,11 +1,13 @@
-<html>
-    <body>
-        <form name = "userInfo" action = "/" method = "POST">
-            <p><input type = "text" name = "uName" value = "{{ uName }}" /> {{ uNameError }}</p>
-            <p><input type = "text" name = "eMail" value = "{{ eMail }}" /> {{ eMailError }}</p>
-            <p><input type = "password" name = "password" value = "" /> {{ passwordError }}</p>
-            <p><input type = "password" name = "confirmPassword" value = "" /> {{ confirmPasswordError }}</p>
-            <p><input type = "submit" name = "submit" value = "submit" /></p>
-        </form>
-    </body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+
+<form name = "userInfo" id = "userInfo" action = "/" method = "POST">
+    <p><input type = "text" name = "uName" value = "{{ uName }}" /> {{ uNameError }}</p>
+    <p><input type = "text" name = "eMail" value = "{{ eMail }}" /> {{ eMailError }}</p>
+    <p><input type = "password" name = "password" value = "" /> {{ passwordError }}</p>
+    <p><input type = "password" name = "confirmPassword" value = "" /> {{ confirmPasswordError }}</p>
+    <p><input type = "submit" name = "submit" value = "submit" /></p>
+</form>
+
+{% endblock %}
