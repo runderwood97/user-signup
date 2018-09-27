@@ -82,9 +82,10 @@ def check():
                 eMailError += ", Your e-mail must be 3-20 characters long"
                 numErrors += 1
 
+        atSignFound = False
+        dotFound = False
+
         for letter in eMail:
-            atSignFound = False
-            dotFound = False
 
             if letter == "@":
                 if atSignFound == False:
