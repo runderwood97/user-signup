@@ -107,6 +107,13 @@ def check():
                     else:
                         eMailError += ", You can only have one . in your e-mail"
                         numErrors += 1   
+        
+        if atSignFound == False:
+            eMailError = "You must have one @ in your email"
+            numErrors += 1
+        if dotFound == False:
+            eMailError "You must have one . in your email"
+            numErrors += 1
 
     #checking to see if any errors were caught and then deciding which template to return
     if numErrors == 0:
