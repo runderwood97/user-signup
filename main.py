@@ -20,67 +20,67 @@ def check():
     #Check to confirm username
     if uName == "":
         uNameError = "You must insert a username"
-        numErrors++
+        numErrors += 1
     else:
         if " " in uName:
             uNameError = "There can be no space"
-            numErrors++
+            numErrors += 1
         if len(uName) < 3 or len(uName) > 20:
             if uNameError == "":
                 uNameError = "Username must be 3-20 characters long"
-                numErrors++
+                numErrors += 1
             else:
                 uNameError += ", Username must be 3-20 characters long"
-                numErrors++
+                numErrors += 1
 
     #Check to confirm password
     if password == "":
         passwordError = "You must insert a password"
-        numErrors++
+        numErrors += 1
     else:
         if " " in password:
             passwordError = "There can be no space"
-            numErrors++
+            numErrors += 1
         if len(password) < 3 or len(password) > 20:
             if passwordError == "":
                 passwordError = "Passwod must be 3-20 characters long"
                 numErrors
             else:
                 passwordError += ", Password must be 3-20 characters long"
-                numErrors++
+                numErrors += 1
 
     #Check to verify confirmpassword
     if confirmPassword == "":
         confirmPasswordError = "You must insert a confirm password"
-        numErrors++
+        numErrors += 1
     else:
         if confirmPassword == password:
             if " " in confirmPassword:
                 confirmPasswordError = "There can be no space"
-                numErrors++
+                numErrors += 1
             if len(confirmPassword) < 3 or len(confirmPassword) > 20:
                 if confirmPasswordError == "":
                     confirmPasswordError = "Passwod must be 3-20 characters long"
-                    numErrors++
+                    numErrors += 1
                 else:
                     confirmPasswordError += ", Password must be 3-20 characters long"
-                    numErrors++
+                    numErrors += 1
         else:
             confirmPasswordError = "Your confirm password and password do not match"
-            numErrors++
+            numErrors += 1
 
     #Check to verify e-mail
     if eMail != "":
         if " " in eMail:
             eMailError = "Your e-mail can not contain a space"
-            numErrors++
+            numErrors += 1
         if len(eMail) < 3 or len(eMail) > 20:
             if eMailError == "":
                 eMailError = "Your e-mail must be 3-20 characters long"
-                numErrors++
+                numErrors += 1
             else:
                 eMailError += ", Your e-mail must be 3-20 characters long"
-                numErrors++
+                numErrors += 1
 
         for letter in eMail:
             atSignFound = False
@@ -92,20 +92,20 @@ def check():
                 else:
                     if eMailError == "":
                         eMailError = "You can only have one @ in your e-mail"
-                        numErrors++
+                        numErrors += 1
                     else: 
                         eMailError += ", You can only have one @ in your e-mail"
-                        numErrors++
+                        numErrors += 1
             if letter == ".":
                 if dotFound == False:       
                     dotFound = True
                 else: 
                     if eMailError == "":
                         eMailError = "You can only have one . in your e-mail"
-                        numErrors++
+                        numErrors += 1
                     else:
                         eMailError += ", You can only have one . in your e-mail"
-                        numErrors++    
+                        numErrors += 1   
 
     #checking to see if any errors were caught and then deciding which template to return
     if numErrors == 0:
