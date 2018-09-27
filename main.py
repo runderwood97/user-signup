@@ -112,7 +112,7 @@ def check():
             eMailError = "You must have one @ in your email"
             numErrors += 1
         if dotFound == False:
-            eMailError "You must have one . in your email"
+            eMailError = "You must have one . in your email"
             numErrors += 1
 
     #checking to see if any errors were caught and then deciding which template to return
