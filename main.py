@@ -7,10 +7,10 @@ app.config['DEBUG'] = True
 
 @app.route("/", methods = ['POST'])
 def check():
-    uName = request.userInfo["uName"]
-    eMail = request.userInfo["eMail"]
-    password = request.userInfo["password"]
-    confirmPassword = request.userInfo["confirmPassword"]
+    uName = request.form["uName"]
+    eMail = request.form["eMail"]
+    password = request.form["password"]
+    confirmPassword = request.form["confirmPassword"]
     uNameError = ""
     eMailError = ""
     passwordError = ""
